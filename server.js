@@ -3,8 +3,12 @@ const express = require('express');
 const app = express();
 const mongodb = require('./data/database');
 const routes = require('./routes/index');
+const cors = require('cors');
 
 const PORT = process.env.PORT || 8080;
+
+// Enable CORS for all routes
+app.use(cors());
 
 // Custom JSON parser that catches errors and returns JSON instead of HTML
 app.use((req, res, next) => {
