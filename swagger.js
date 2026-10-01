@@ -1,2 +1,15 @@
-// Swagger documentation is handled by swagger-jsdoc in server.js
-// This file is kept for reference but is not used at runtime
+const swaggerAutogen = require("swagger-autogen")();
+
+const doc = {
+    info: {
+        title: 'Products Api',
+        description: 'Provide data about the products '
+    },
+    host : 'localhost:8080',
+    schemes: ['http']
+};
+
+const outputFile = './swagger.json';
+const endpointsFiles = ['./routes/index.js'];
+
+swaggerAutogen(outputFile,endpointsFiles, doc)

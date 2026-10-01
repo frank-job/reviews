@@ -5,7 +5,7 @@
     "description": "Provide data about the products ",
     "version": "1.0.0"
   },
-  "host": "https://reviews-kq9m.onrender.com",
+  "host": "reviews-kq9m.onrender.com",
   "basePath": "/",
   "schemes": [
     "https",
