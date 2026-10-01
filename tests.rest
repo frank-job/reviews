@@ -1,0 +1,61 @@
+@hostname = http://localhost:8080
+
+###
+# GET all products
+GET http://localhost:8080/products
+Content-Type: application/json
+
+###
+# Create a new product
+POST http://localhost:8080/products
+Content-Type: application/json
+
+{
+    "name": "Test Product Alpha",
+    "description": "A test product for validation",
+    "location": "Test Warehouse",
+    "price": 29.99,
+    "brand": "TestBrand",
+    "stock": 100,
+    "isAvailable": true,
+    "date": "15/06/2026"
+}
+
+###
+# Get single product by ID (replace {id} with actual ID from POST response)
+GET http://localhost:8080/products/6abe3b91bab55a5b41289d94
+Content-Type: application/json
+
+###
+# Update product by ID (replace {id} with actual ID)
+PUT http://localhost:8080/products/6abe3b91bab55a5b41289d94
+Content-Type: application/json
+
+{
+    "name": "Updated Product Name",
+    "description": "Updated description here",
+    "location": "New Location",
+    "price": 49.99,
+    "brand": "UpdatedBrand",
+    "stock": 50,
+    "isAvailable": false,
+    "date": "20/07/2026"
+}
+
+###
+# Delete product by ID (replace {id} with actual ID)
+DELETE http://localhost:8080/products/6abe3b91bab55a5b41289d94
+
+###
+# Test validation error (missing required fields)
+POST {{hostname}}/products
+Content-Type: application/json
+
+{
+    "name": "Bad"
+}
+
+###
+# Test invalid ID format
+GET {{hostname}}/products/invalid-id
+Content-Type: application/json
