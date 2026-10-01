@@ -5,9 +5,10 @@
     "description": "Provide data about the products ",
     "version": "1.0.0"
   },
-  "host": "localhost:8080",
+  "host": "https://reviews-kq9m.onrender.com",
   "basePath": "/",
   "schemes": [
+    "https",
     "http"
   ],
   "paths": {
